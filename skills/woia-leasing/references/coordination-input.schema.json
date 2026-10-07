@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "leasing coordination input",
+  "type": "object",
+  "required": [
+    "department",
+    "organization",
+    "actor",
+    "purpose",
+    "subject_ref",
+    "subject_version",
+    "operation_id",
+    "policy_version",
+    "source_map_version",
+    "operation"
+  ],
+  "properties": {
+    "department": {
+      "const": "leasing"
+    },
+    "operation": {
+      "enum": [
+        "prepare",
+        "evaluate",
+        "request-contribution",
+        "record-contribution",
+        "close-contribution"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

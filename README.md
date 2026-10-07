@@ -1,42 +1,9 @@
 # woia-leasing
 
-Portable Agent Plugin for Coordinate generic placement, scoped application evidence, competent decisions, independent agreement results and accepted administration transfer..
+Coordinate generic placement, scoped application evidence, competent decisions, independent agreement results and accepted administration transfer.
 
-## Capability
+Generic department orchestrator, one root per Project/context. Requires published `woia-core >=0.5.3`; uses its OPEA-H mechanics and typed collaboration. Version 0.5.0 implementation candidate, not a release.
 
-~~~text
-DISCOVER -> DECIDE -> IMPLEMENT -> VALIDATE -> REPORT
-~~~
+See [skill](skills/woia-leasing/SKILL.md), [method contract](skills/woia-leasing/references/CONTRACT.md) and `VALIDATION.md` in the source repository.
 
-The plugin adapts to the repository it operates on without requiring the consumer to adopt WOIA's authoring toolchain.
-
-## Portable package
-
-~~~text
-plugin.json
-README.md
-CHANGELOG.md
-LICENSE
-skills/**
-# optional source diagnostic when retained by the repository
-CHECKSUMS.sha256
-~~~
-
-`CHECKSUMS.sha256` is optional source evidence, not a required portable/release artifact.
-
-Add `mcp.json` only if the capability genuinely requires MCP.
-
-## Consumer requirements
-
-Document only genuine capability/runtime requirements here. Do not list maintenance Node/pnpm/Mise/Docker unless the portable capability itself truly needs them.
-
-## Development
-
-~~~text
-mise install
-mise run bootstrap
-mise run doctor
-mise run ci:fast
-mise run ci:extended
-mise run release:check
-~~~
+No Real Estate delta, copied business master, contact dispatcher, financial executor or organization policy. Physical provider/runtime qualification and Operator E2E are NOT_RUN; Production Ready is false.
