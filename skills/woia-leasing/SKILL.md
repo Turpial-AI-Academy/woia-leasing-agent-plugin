@@ -1,55 +1,25 @@
 ---
 name: woia-leasing
-description: Coordinate generic placement, scoped application evidence, competent decisions, independent agreement results and accepted administration transfer.
+description: Coordinate generic placement, scoped application evidence, competent decisions, independent agreement results and accepted administration transfer. Use for leasing planning, coordination, evidence review and continuity.
 license: MIT
 ---
 
 # woia-leasing
 
-## Operating flow
+Read [method](references/CONTRACT.md) and [machine-readable method](references/method.json) before coordinating. Resolve installed Core >=0.5.3, accepted organization resources, authoritative shared references, role/purpose/field access and effective competent authority. Missing or conflicting inputs are precise owned blockers, never guessed facts.
 
-~~~text
-DISCOVER -> DECIDE -> IMPLEMENT -> VALIDATE -> REPORT
-~~~
+## Method
 
-## Purpose
+1. Maintain the placement method and organize the case. Record sourced inputs, decision owner, exact versions, evidence and next action.
+2. Assemble and review application evidence. Record sourced inputs, decision owner, exact versions, evidence and next action.
+3. Obtain competent decisions and retain human-agreed terms. Record sourced inputs, decision owner, exact versions, evidence and next action.
+4. Coordinate agreement, signatures, initial money and handover separately. Record sourced inputs, decision owner, exact versions, evidence and next action.
+5. Transfer accepted ongoing responsibility and retain residual work. Record sourced inputs, decision owner, exact versions, evidence and next action.
 
-Coordinate generic placement, scoped application evidence, competent decisions, independent agreement results and accepted administration transfer.
+One logical application does not grant cross-participant document access. Negotiation and Offers stay human-led. Placement authority is not administration authority. Imported active agreements need no fictitious placement and Leasing is not the indefinite administrator.
 
-## Minimum sufficient evidence
+Use Core OPEA-H proportionately: organize the outcome, plan accepted bounded work, coordinate permitted execution by actual owners, audit observable evidence, obtain competent human decisions when required. This root does not create new authority. Do not silently turn methodology steps into mandatory fixed order. Distinct contributions use supported Core request/response references with own-authority receiver acceptance and correlated result; no human courier or mutation of receiver Tasks.
 
-Use a bounded path when an authoritative existing artifact/evidence set is healthy and the requested change is local and understood:
+Never send externally or mutate appointments here; route the distinct contribution to Customer Service. No finance execution, autonomous negotiation, inferred acceptance, business master, scheduler or organization-specific default. UNKNOWN requires reconciliation before retry. Preserve physical work, signatures, money and accepted transfers as separate facts. Keep unresolved/residual work owned even after completion of a fulfilled contribution.
 
-1. identify the artifact/evidence, source candidate, and affected surface;
-2. load only supporting context and references needed for that surface;
-3. amend or re-evaluate the smallest coherent unit;
-4. verify affected behavior plus mandatory cross-cutting invariants;
-5. preserve unrelated valid artifacts/evidence and report what changed.
-
-Use the deep path for a new artifact, unclear scope or contradictory evidence, public API/event/schema changes, persisted data/migrations, authentication/authorization/secrets/signing/trust boundaries, deployment/rollback/availability risk, cross-provider dependency restructuring, unhealthy or unfamiliar conventions, missing durable required evidence, or a failed invariant that invalidates reused evidence. Load the references/checklists needed by those triggers and retain all required safety validation.
-
-## Discover
-
-Inspect actual repository/system state before changing it. Locate authoritative artifacts/evidence and identify affected standards, constraints, supported platforms, integrations, and user requirements. Expand context when a dependency, uncertainty, or deep-path trigger requires it.
-
-## Decide
-
-Select the smallest strategy that satisfies the capability. Preserve healthy existing standards. Do not infer policy from the author's workspace.
-
-## Implement
-
-Apply only authorized changes. Keep domain semantics independent from unrelated tooling.
-
-## Validate
-
-Run capability-appropriate checks and verify changed state. Reuse evidence only when it is durable, inspectable evidence of actual execution/observation with an identifiable candidate, checked surface, relevant inputs/environment, and outcome. Independently establish that it satisfies the gate being owned; prose claims or recollection are not execution evidence.
-
-A later mutation invalidates the checks whose coverage or inputs it affects. Rerun those checks and mandatory related invariants; preserve unaffected valid evidence. Reuse expensive runtime verification across an unchanged candidate and relevant environment. A new turn/session alone does not invalidate evidence. Execute or observe relevant checks when required evidence cannot be inspected or established. Skipped/unavailable checks are not PASS.
-
-## Report
-
-Report current state, source candidate, affected surface, decisions, changes, and exact usage/maintenance commands. Distinguish reusable evidence, invalidated evidence, freshly established evidence, and assumptions/inferences that are not evidence. Include remaining risks and uncertainties.
-
-## Detailed references
-
-Add focused files under `references/` only when more detail is needed and give each reference a concrete scope/risk/ambiguity load trigger. Load triggered safety references; a bounded amendment does not require every reference or full template replay. Add scripts/assets only when they materially improve deterministic execution.
+The [deterministic gate](scripts/coordination-gate.mjs) validates a proposed coordination input without dispatch or persistence. Its PASS is local prerequisite validation, never proof of business acceptance, remote execution or Production Ready.

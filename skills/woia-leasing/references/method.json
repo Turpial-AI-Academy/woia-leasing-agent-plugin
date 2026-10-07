@@ -1,0 +1,36 @@
+{
+  "schema": "dev.woia.leasing.coordination/v1",
+  "department": "leasing",
+  "version": "0.5.0",
+  "method": [
+    "Maintain the placement method and organize the case",
+    "Assemble and review application evidence",
+    "Obtain competent decisions and retain human-agreed terms",
+    "Coordinate agreement, signatures, initial money and handover separately",
+    "Transfer accepted ongoing responsibility and retain residual work"
+  ],
+  "distinctions": [
+    "application completeness",
+    "evaluation score",
+    "competent decision",
+    "signature invitation",
+    "signature",
+    "payment",
+    "allocation",
+    "possession",
+    "administration acceptance"
+  ],
+  "core_dependency": {
+    "name": "woia-core",
+    "minimum_version": "0.5.3"
+  },
+  "source_authority_required": true,
+  "organization_values": "configured, never inferred",
+  "business_state_owner": "owning shared provider",
+  "external_contact_owner": "customer-service",
+  "scheduling_mutation_owner": "customer-service",
+  "money_owner": "finance",
+  "negotiation": "human-led",
+  "operator_e2e": "NOT_RUN",
+  "production_ready": false
+}
