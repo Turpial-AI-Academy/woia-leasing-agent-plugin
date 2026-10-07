@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "woia-leasing",
+  "version": "0.5.0",
+  "description": "Coordinate generic placement, scoped application evidence, competent decisions, independent agreement results and accepted administration transfer.",
+  "author": {
+    "name": "Turpial AI Academy",
+    "url": "https://github.com/Turpial-AI-Academy"
+  },
+  "homepage": "https://github.com/Turpial-AI-Academy/woia-leasing-agent-plugin",
+  "repository": "https://github.com/Turpial-AI-Academy/woia-leasing-agent-plugin",
+  "license": "MIT",
+  "keywords": ["agent-plugin", "woia-leasing"]
+}
