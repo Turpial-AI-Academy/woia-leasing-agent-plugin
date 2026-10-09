@@ -6,7 +6,7 @@ license: MIT
 
 # woia-leasing
 
-Read [method](references/CONTRACT.md) and [machine-readable method](references/method.json) before coordinating. Resolve installed Core >=0.5.6, accepted organization resources, authoritative shared references, role/purpose/field access and effective competent authority. Missing or conflicting inputs are precise owned blockers, never guessed facts.
+Read [method](references/CONTRACT.md) and [machine-readable method](references/method.json) before coordinating. Resolve installed Core >=0.5.7, accepted organization resources, authoritative shared references, role/purpose/field access and effective competent authority. Missing or conflicting inputs are precise owned blockers, never guessed facts.
 
 ## Method
 

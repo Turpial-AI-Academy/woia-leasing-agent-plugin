@@ -1,7 +1,7 @@
 {
   "schema": "dev.woia.leasing.coordination/v1",
   "department": "leasing",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "method": [
     "Maintain the placement method and organize the case",
     "Assemble and review application evidence",
@@ -22,7 +22,7 @@
   ],
   "core_dependency": {
     "name": "woia-core",
-    "minimum_version": "0.5.6"
+    "minimum_version": "0.5.7"
   },
   "source_authority_required": true,
   "organization_values": "configured, never inferred",
