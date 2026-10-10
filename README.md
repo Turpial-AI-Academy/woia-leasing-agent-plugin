@@ -5,7 +5,7 @@ Coordinate generic placement, scoped application evidence, competent decisions, 
 
 See [skill](skills/woia-leasing/SKILL.md), [method contract](skills/woia-leasing/references/CONTRACT.md).
 
-No Real Estate delta, copied business master, contact dispatcher, financial executor or organization policy. Physical provider/runtime qualification and Operator E2E are NOT_RUN; Production Ready is false.
+Core owns work mechanics. Shared providers own their business facts and effects. Outcome requirements come from an accepted, immutable typed contract resolved by the host. Physical provider/runtime qualification and Operator E2E are NOT_RUN; Production Ready is false.
 
 ## Maintenance
 

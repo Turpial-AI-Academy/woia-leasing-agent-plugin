@@ -5,10 +5,10 @@ Coordinate generic placement, scoped application evidence, competent decisions, 
 1. Maintain the placement method and organize the case.
 2. Assemble and review application evidence.
 3. Obtain competent decisions and retain human-agreed terms.
-4. Coordinate agreement, signatures, initial money and handover separately.
+4. Coordinate the accepted agreement requirements and fulfillment separately.
 5. Transfer accepted ongoing responsibility and retain residual work.
 
-One logical application does not grant cross-participant document access. Negotiation and Offers stay human-led. Placement authority is not administration authority. Imported active agreements need no fictitious placement and Leasing is not the indefinite administrator.
+One logical application does not grant cross-participant document access. Negotiation authority and competent agreement acceptance are distinct. Placement authority is not administration authority. Imported active agreements need no fictitious placement and Leasing is not the indefinite administrator.
 
 ## Shared boundaries
 
@@ -22,4 +22,4 @@ Separate application completeness, evaluation score, competent decision, signatu
 
 The host must resolve authenticated actor, purpose/field/object access, effective source-map and authority grants from trusted organization bindings before calling the pure gate. Input booleans/statuses are not approvals or credentials and must never come directly from arbitrary caller assertions. The exact grant is bound to organization, actor, purpose, subject reference/version and operation. This helper cannot authenticate a host or issue authority, store accepted facts or enforce remote effects.
 
-Department-specific outcome evaluation requires each independent fact to carry its own accepted source evidence/version. It reports evidence readiness for competent owner review; it never creates acceptance or substitutes one fact for another.
+Outcome evaluation loads [the accepted outcome descriptor](outcome-contract.md) through the trusted host port. The descriptor fixes the phase requirements, scope, immutable source revision and digest. Each required independent fact carries its own accepted current host binding, evidence and version. It reports evidence readiness for competent owner review; it never creates acceptance or substitutes one fact for another.

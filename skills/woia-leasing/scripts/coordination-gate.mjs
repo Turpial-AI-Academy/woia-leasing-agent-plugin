@@ -1,3 +1,4 @@
+import { resolveOutcomeContract } from './outcome-contract.mjs';
 const department="leasing";
 export function evaluateCoordination(input){
  const blockers=[];const require=(ok,code)=>{if(!ok)blockers.push(code)};
@@ -18,9 +19,11 @@ export function evaluateCoordination(input){
  return {result:blockers.length?'BLOCKED':'PASS',blockers,department,operation_id:input.operation_id,dispatch:false,business_fact_written:false};
 }
 
-const outcomeRequirements={"placement":["application_evidence","competent_decision"],"agreement":["signature","initial_money","physical_handover"],"administration_transfer":["receiver_acceptance"]};
-export function evaluateOutcome(phase, facts){
- const needed=outcomeRequirements[phase];if(!needed)return {result:'BLOCKED',blockers:['UNKNOWN_METHOD_OUTCOME']};
- const blockers=needed.filter(key=>facts?.[key]?.status!=='ACCEPTED'||typeof facts[key].evidence_ref!=='string'||!facts[key].evidence_ref.trim()||typeof facts[key].version!=='string'||!facts[key].version.trim());
- return {result:blockers.length?'BLOCKED':'EVIDENCE_READY_FOR_OWNER_REVIEW',blockers,phase,accepted_business_fact:false,dispatch:false};
+export function evaluateOutcome(phase, facts, scope, ports){
+ let resolved;try{resolved=resolveOutcomeContract(scope,ports)}catch(error){return {result:'BLOCKED',blockers:[error.message],accepted_business_fact:false,dispatch:false}};
+ const {descriptor,fact_bindings}=resolved;
+ if(descriptor.department!==department)return {result:'BLOCKED',blockers:['OUTCOME_DEPARTMENT_MISMATCH'],accepted_business_fact:false,dispatch:false};
+ const needed=Object.hasOwn(descriptor.phases,phase)?descriptor.phases[phase]:null;if(!needed)return {result:'BLOCKED',blockers:['UNKNOWN_METHOD_OUTCOME'],accepted_business_fact:false,dispatch:false};
+ const blockers=needed.filter(key=>facts?.[key]?.status!=='ACCEPTED'||fact_bindings[key]?.status!=='ACCEPTED_CURRENT'||facts[key].evidence_ref!==fact_bindings[key].evidence_ref||facts[key].version!==fact_bindings[key].version||typeof facts[key].evidence_ref!=='string'||!facts[key].evidence_ref.trim()||typeof facts[key].version!=='string'||!facts[key].version.trim());
+ return {result:blockers.length?'BLOCKED':'EVIDENCE_READY_FOR_OWNER_REVIEW',blockers,phase,contract_ref:descriptor.source_ref,contract_revision:descriptor.revision,accepted_business_fact:false,dispatch:false};
 }

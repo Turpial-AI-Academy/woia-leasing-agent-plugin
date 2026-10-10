@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import { evaluateOutcome } from '../skills/woia-leasing/scripts/coordination-gate.mjs';
+import { outcomeDescriptorDigest } from '../skills/woia-leasing/scripts/outcome-contract.mjs';
+
+const scope = { org_id:'org:a',scope:'case:a',task_ref:'task:a',purpose:'outcome-review',subject_ref:'subject:a' };
+const descriptor = { schema:'dev.woia.outcome-contract/v1', id:'method:v1',revision:'1',source_ref:'contract:1',org_id:scope.org_id,scope:scope.scope,subject_ref:scope.subject_ref,department:'leasing',phases:{completion:['competent_decision','fulfillment']} };
+const digest = outcomeDescriptorDigest(descriptor);
+const facts = { competent_decision:{status:'ACCEPTED',evidence_ref:'evidence:decision',version:'1'},fulfillment:{status:'ACCEPTED',evidence_ref:'evidence:fulfillment',version:'2'} };
+const makeContext = () => ({...scope,authenticated:true,current:true,outcome_binding:{status:'ACCEPTED_CURRENT',source_ref:descriptor.source_ref,revision:descriptor.revision,digest_sha256:digest,descriptor:structuredClone(descriptor)},domain_source:{current:true,source_ref:descriptor.source_ref,revision:descriptor.revision,digest_sha256:digest},fact_bindings:Object.fromEntries(Object.entries(facts).map(([key,fact])=>[key,{...fact,status:'ACCEPTED_CURRENT'}]))});
+const run = (patch = {}, suppliedFacts = facts, suppliedScope = scope) => evaluateOutcome('completion',suppliedFacts,suppliedScope,{resolveTrustedContext:()=>({...makeContext(),...patch})});
+assert.equal(run().result,'EVIDENCE_READY_FOR_OWNER_REVIEW');
+assert.equal(run().accepted_business_fact,false);
+assert.equal(run({current:false}).result,'BLOCKED');
+assert.equal(run({org_id:'org:b'}).result,'BLOCKED');
+assert.equal(run({}, {...facts,fulfillment:{...facts.fulfillment,evidence_ref:'forged'}}).result,'BLOCKED');
+assert.equal(run({}, {competent_decision:facts.competent_decision}).result,'BLOCKED');
+assert.equal(evaluateOutcome('completion',facts,scope).result,'BLOCKED');
+assert.equal(run({},facts,{...scope,descriptor}).result,'BLOCKED');
+const altered=makeContext(); altered.outcome_binding.descriptor.phases.completion=['competent_decision'];
+assert.equal(run(altered).result,'BLOCKED');
+const cross=makeContext(); cross.outcome_binding.descriptor.department='another'; cross.outcome_binding.digest_sha256=outcomeDescriptorDigest(cross.outcome_binding.descriptor);cross.domain_source.digest_sha256=cross.outcome_binding.digest_sha256;
+assert.equal(run(cross).result,'BLOCKED');
+const stale=makeContext();stale.domain_source.revision='2';
+assert.equal(run(stale).result,'BLOCKED');
+assert.equal(evaluateOutcome('unlisted',facts,scope,{resolveTrustedContext:makeContext}).result,'BLOCKED');
+assert.deepEqual(facts,{competent_decision:{status:'ACCEPTED',evidence_ref:'evidence:decision',version:'1'},fulfillment:{status:'ACCEPTED',evidence_ref:'evidence:fulfillment',version:'2'}});
+console.log('outcome-contract: PASS (current scope, source digest, fact evidence, isolation and no policy injection)');

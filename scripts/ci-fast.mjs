@@ -4,6 +4,7 @@ import { spawnSync } from "node:child_process";
 import { ROOT } from "./lib/plugin.mjs";
 
 const commands = [
+  ["scripts/test-outcome-contract.mjs"],
   ["scripts/validate-plugin.mjs"],
   ["scripts/validate-source.mjs"],
 ];
